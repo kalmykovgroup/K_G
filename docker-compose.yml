@@ -1,0 +1,19 @@
+services:
+ 
+  certbot: 
+    container_name: certbot  
+    build:
+      context: ./.docker/certbot
+      dockerfile: Dockerfile 
+
+
+  nginx:
+    container_name: nginx     
+    depends_on:
+      - certbot
+    image: nginx:1.27.2
+    build:
+      context: ./.docker/nginx
+      dockerfile: Dockerfile  
+
+

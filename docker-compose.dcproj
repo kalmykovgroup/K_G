@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" Sdk="Microsoft.Docker.Sdk">
+  <PropertyGroup Label="Globals">
+    <ProjectVersion>2.1</ProjectVersion>
+    <DockerTargetOS>Linux</DockerTargetOS>
+    <DockerPublishLocally>False</DockerPublishLocally>
+    <ProjectGuid>0a32e32c-d8ae-47f4-892e-1296371afd70</ProjectGuid>
+    <DockerLaunchAction>
+    </DockerLaunchAction>
+    <DockerServiceName>server</DockerServiceName>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include=".docker\certbot\2.sh" />
+    <None Include=".docker\certbot\Dockerfile" />
+    <None Include=".docker\nginx\docker-entrypoint.sh" />
+    <None Include=".docker\nginx\Dockerfile" />
+    <None Include=".docker\nginx\nginx.conf" />
+    <None Include=".env" />
+    <None Include="docker-compose.override.yml">
+      <DependentUpon>docker-compose.yml</DependentUpon>
+    </None>
+    <None Include="docker-compose.yml" />
+    <None Include=".dockerignore" />
+    <None Include=".docker\certbot\default_ssh\cert.pem" />
+    <None Include=".docker\certbot\default_ssh\chain.pem" />
+    <None Include=".docker\certbot\default_ssh\fullchain.pem" />
+    <None Include=".docker\certbot\default_ssh\privkey.pem" />
+  </ItemGroup>
+</Project>

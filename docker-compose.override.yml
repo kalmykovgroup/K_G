@@ -1,0 +1,22 @@
+services:
+ 
+
+  certbot:  
+    env_file:
+       - .env
+    volumes:
+      - 'ssl:${SSL_DIR}' 
+ 
+  nginx:
+    env_file:
+      - .env
+    environment:
+      - DOMAIN_NAME=${DOMAIN_NAME}
+    volumes:
+      -  ./.docker/nginx/nginx.conf:/etc/nginx/nginx.conf   
+      - 'ssl:${SSL_DIR}'
+    ports:
+      -  "80:80"
+      - "443:443"
+volumes:
+  ssl:
