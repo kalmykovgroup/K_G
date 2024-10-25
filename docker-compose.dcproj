@@ -10,7 +10,7 @@
     <DockerServiceName>server</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
-    <None Include=".docker\certbot\2.sh" />
+    <None Include=".docker\certbot\certbot-entrypoint.sh" />
     <None Include=".docker\certbot\Dockerfile" />
     <None Include=".docker\nginx\docker-entrypoint.sh" />
     <None Include=".docker\nginx\Dockerfile" />

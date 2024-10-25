@@ -1,5 +1,5 @@
-FROM ubuntu:latest
-#FROM certbot/certbot:latest
+#FROM ubuntu:latest
+FROM certbot/certbot:latest
 
 #EXPOSE 80 
  
@@ -9,19 +9,14 @@ FROM ubuntu:latest
 #WORKDIR /certbot
 
 
-RUN apt-get update 
-#RUN apt-get -y upgrade 
+#RUN apt-get update  
 
-#RUN apt-get -y install certbot 
-
-RUN apt-get -y install dos2unix
+#RUN apt-get -y install certbot  
 
 COPY 2.sh ./ 
+ 
 
-
-RUN dos2unix -n ./2.sh ./3.sh
-
-ENTRYPOINT ["./3.sh"]
+ENTRYPOINT ["./certbot-entrypoint.sh"]
   
 
  

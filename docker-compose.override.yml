@@ -1,5 +1,12 @@
 services:
- 
+
+  server:
+    env_file:
+      - .env 
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=5000 
+      
 
   certbot:  
     env_file:

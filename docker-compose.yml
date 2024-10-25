@@ -1,14 +1,22 @@
+version: '3.0'
+
 services:
- 
+  server:
+    image: ${DOCKER_REGISTRY-}server
+    build:
+      context: .
+      dockerfile: Server/Dockerfile
+
+
   certbot: 
-    container_name: certbot  
+    container_name: ${DOCKER_REGISTRY-}certbot 
     build:
       context: ./.docker/certbot
       dockerfile: Dockerfile 
 
 
   nginx:
-    container_name: nginx     
+    container_name: ${DOCKER_REGISTRY-}nginx     
     depends_on:
       - certbot
     image: nginx:1.27.2
